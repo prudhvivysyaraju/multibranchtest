@@ -7,7 +7,7 @@ pipeline {
             sh 'git clone https://github.com/mavrick202/dockertest1.git'
             }
     }
-    stage('Submit Staging Stack') {
+ stage('Submit production Stack') {
             steps {
             sh "aws cloudformation create-stack --stack-name s31bucket --template-body file://simplests3bucket.json --region 'ap-southeast-2'"
               }
