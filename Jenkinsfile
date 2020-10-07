@@ -9,7 +9,7 @@ pipeline {
     }
  stage('Submit production Stack') {
             steps {
-            sh "aws cloudformation create-stack --stack-name s31bucket --template-body file://simplests3bucket.json --region 'ap-southeast-2'"
+            sh "aws cloudformation create-stack --stack-name s31bucket --template-body file://simples3bucket.json --region 'ap-southeast-2'"
               }
              }
             }
