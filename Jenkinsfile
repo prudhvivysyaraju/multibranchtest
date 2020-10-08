@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Clone Repo') {
           steps {
-            sh 'whoami'
             sh 'git clone https://github.com/prudhvivysyaraju/multibranchtest.git'
             }
     }
- stage('Submit production Stack') {
+    stage('Submit Development Stack') {
             steps {
-            sh 'whoami'
-            sh "aws cloudformation create-stack --stack-name s3bucket --template-body file://simplests3bucket.json --region 'ap-southeast-2'"
+            sh "cd /usr/local/bin/"
+            sh "ls"
+            sh "/usr/local/bin/aws cloudformation create-stack --stack-name s3bucket --template-body file://simples3bucket.json --region 'ap-southeast-2'"
               }
              }
             }
