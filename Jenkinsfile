@@ -6,6 +6,18 @@ pipeline {
             sh 'git clone https://github.com/prudhvivysyaraju/multibranchtest.git'
             }
     }
+    stages {
+        stage('Clone Repo') {
+          steps {
+            sh "cfn-lint ./*.json"
+            }
+    }
+        stages {
+        stage('Clone Repo') {
+          steps {
+            sh "/usr/local/bin/aws s3 cp simples3bucket.json s3://aws-logs-786678469955-ap-southeast-2/simples3bucket.json"
+            }
+    }
     stage('Submit Development Stack') {
             steps {
             sh "cd /usr/local/bin/"
