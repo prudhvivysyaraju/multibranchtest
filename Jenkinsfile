@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'cfn-lint ./*.json'
+                sh '/usr/local/bin/cfn-lint ./*.json'
             }
         }
         stage('s3upload') { 
